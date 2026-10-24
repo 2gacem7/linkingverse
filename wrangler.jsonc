@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "linkingverse",
+  "compatibility_date": "2026-10-01",
+  // Site 100 % statique : Cloudflare sert les fichiers générés par `nuxt generate`
+  "assets": {
+    "directory": "./.output/public",
+    // /mentions-legales sert mentions-legales.html, sans slash final
+    "html_handling": "drop-trailing-slash",
+    // URL inconnue → 404.html généré par Nuxt
+    "not_found_handling": "404-page"
+  }
+}
