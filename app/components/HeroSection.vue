@@ -1,5 +1,6 @@
 <template>
   <section class="hero">
+    <HeroLogo />
     <div class="wrap inner">
       <span class="pill"><span class="dot dot--live" />Formation en IA générative &amp; agents IA</span>
       <h1>
@@ -23,7 +24,7 @@
 </template>
 
 <style scoped>
-.hero { position: relative; overflow: hidden; }
+.hero { position: relative; overflow: hidden; isolation: isolate; }
 /* Trame de points discrète, estompée vers les bords */
 .hero::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
