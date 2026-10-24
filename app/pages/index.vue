@@ -9,6 +9,7 @@ usePageSeo({
 <template>
   <div>
     <HeroSection />
+    <ToolsMarquee />
     <ValuesSection />
     <FormationsSection />
     <MethodSection />

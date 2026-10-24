@@ -69,6 +69,21 @@ export const faq: Faq[] = [
   { q: 'Combien de participants par session ?', a: '[À COMPLÉTER : nombre maximum de participants pour garder un format pratique.]' },
 ]
 
+/** Outils abordés en formation (bandeau défilant sous le hero) */
+export const tools = ['ChatGPT', 'Claude', 'Gemini', 'Microsoft Copilot', 'Mistral Le Chat', 'Perplexity', 'NotebookLM']
+
+/** Mots qui défilent dans le titre principal */
+export const heroWords = ['votre entreprise', 'vos équipes', 'votre quotidien']
+
+/** Métiers affichés dans la carte « Pour tous les profils » */
+export const roles = ['Direction', 'RH', 'Marketing', 'Commercial', 'Finance', 'Support client', 'Juridique', 'Opérations']
+
+/** Bonnes pratiques affichées dans la carte « Responsable et sécurisé » */
+export const safeguards = ['Données sensibles anonymisées', 'Relecture humaine', 'Sources vérifiées']
+
+/** Journal de l'agent dans le schéma du hero */
+export const agentLog = ['→ Lecture des nouveaux emails', '→ Extraction des informations clés', '✓ Fiche client mise à jour dans le CRM']
+
 export const navLinks = [
   { href: '/#formations', label: 'Formations' },
   { href: '/#methode', label: 'Méthode' },

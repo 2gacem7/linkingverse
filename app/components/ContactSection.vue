@@ -22,7 +22,7 @@ function submit() {
 <template>
   <section id="contact" class="section">
     <div class="wrap contact">
-      <div class="intro">
+      <div class="intro reveal">
         <span class="eyebrow">Contact</span>
         <h2 class="big">Prêt à former vos équipes ?</h2>
         <p class="muted">Parlons de vos besoins lors d'un appel de 30 minutes, sans engagement.</p>
@@ -31,7 +31,7 @@ function submit() {
           [VOTRE TÉLÉPHONE]
         </p>
       </div>
-      <form class="form" @submit.prevent="submit">
+      <form class="form reveal" @submit.prevent="submit">
         <div class="grid" style="--min: 180px">
           <label class="field">Nom
             <input v-model="form.nom" type="text" name="nom" autocomplete="name" required>
@@ -52,7 +52,7 @@ function submit() {
         <label class="field">Votre besoin
           <textarea v-model="form.message" name="message" rows="4" />
         </label>
-        <button type="submit" class="btn btn--primary">Envoyer ma demande</button>
+        <button type="submit" class="btn btn--primary">Envoyer ma demande <span class="arrow" aria-hidden="true">→</span></button>
       </form>
     </div>
   </section>
