@@ -1,4 +1,4 @@
-<!-- Grand logo Linking Verse en arrière-plan du hero, qui suit la souris.
+<!-- Logo Linking Verse au-dessus du titre, légèrement transparent, qui suit la souris.
      Le logo s'oriente vers le curseur, et chaque nœud bouge avec sa propre profondeur :
      les liens qui les relient s'étirent en conséquence.
      Sans souris (mobile) il flotte doucement ; avec prefers-reduced-motion il reste immobile. -->
@@ -27,7 +27,7 @@ const root = ref<HTMLElement | null>(null)
 // Position lissée du curseur, de -1 à 1 sur chaque axe (0 = centre du hero)
 const pos = reactive({ x: 0, y: 0 })
 
-const placed = computed(() => nodes.map((n) => ({ ...n, x: n.x + pos.x * n.depth * 16, y: n.y + pos.y * n.depth * 16 })))
+const placed = computed(() => nodes.map((n) => ({ ...n, x: n.x + pos.x * n.depth * 14, y: n.y + pos.y * n.depth * 14 })))
 
 // Liens tracés d'un bord de cercle à l'autre, comme dans le logo
 const links = computed(() => pairs.map(([i, j]) => {
@@ -46,7 +46,7 @@ onMounted(() => {
   const el = root.value
   if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-  const hero = el.parentElement ?? el
+  const hero = el.closest('section') ?? el
   const target = { x: 0, y: 0 }
   const finePointer = window.matchMedia('(pointer: fine)').matches
   let frame = 0
@@ -96,17 +96,12 @@ onMounted(() => {
 
 <style scoped>
 .hero-logo {
-  position: absolute; z-index: -1; pointer-events: none;
-  top: clamp(40px, 6vw, 72px); left: 50%;
-  width: min(680px, 92vw); aspect-ratio: 1; max-width: 100%;
-  transform: translateX(-50%);
+  pointer-events: none;
+  width: clamp(104px, 12vw, 140px); aspect-ratio: 1; max-width: 100%;
+  margin-bottom: -4px;
 }
 svg { width: 100%; height: 100%; overflow: visible; will-change: transform; }
-.node { fill: none; stroke: rgb(10 10 11 / 0.07); stroke-width: 14; }
-.node--accent { fill: rgb(47 91 255 / 0.13); stroke: none; }
-.link { stroke: rgb(10 10 11 / 0.07); stroke-width: 10; stroke-linecap: round; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero-logo { animation: logo-in 1.2s .2s cubic-bezier(.2, .7, .2, 1) both; }
-}
-@keyframes logo-in { from { opacity: 0; scale: .92; } to { opacity: 1; scale: 1; } }
+.node { fill: var(--paper); stroke: rgb(10 10 11 / 0.32); stroke-width: 12; }
+.node--accent { fill: rgb(47 91 255 / 0.6); stroke: none; }
+.link { stroke: rgb(10 10 11 / 0.32); stroke-width: 9; stroke-linecap: round; }
 </style>

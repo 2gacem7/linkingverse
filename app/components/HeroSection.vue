@@ -1,7 +1,8 @@
 <template>
   <section class="hero">
-    <HeroLogo />
+    <HeroNetwork />
     <div class="wrap inner">
+      <HeroLogo />
       <span class="pill"><span class="dot dot--live" />Formation en IA générative &amp; agents IA</span>
       <h1>
         Faites de l'IA un réflexe dans
@@ -25,14 +26,7 @@
 
 <style scoped>
 .hero { position: relative; overflow: hidden; isolation: isolate; }
-/* Trame de points discrète, estompée vers les bords */
-.hero::before {
-  content: ''; position: absolute; inset: 0; z-index: -1;
-  background-image: radial-gradient(circle, #D5D8DE 1px, transparent 1.2px);
-  background-size: 24px 24px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 30%, transparent 75%);
-}
-.inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; padding-block: clamp(72px, 10vw, 112px) clamp(64px, 8vw, 96px); }
+.inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; padding-block: clamp(40px, 6vw, 64px) clamp(64px, 8vw, 96px); }
 h1 { max-width: 13em; }
 .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: 999px; padding: 6px 14px; background: var(--paper); font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
 
@@ -58,7 +52,8 @@ h1 { max-width: 13em; }
   .inner > :nth-child(2) { animation-delay: .08s; }
   .inner > :nth-child(3) { animation-delay: .16s; }
   .inner > :nth-child(4) { animation-delay: .24s; }
-  .inner > :nth-child(5) { animation-delay: .36s; }
+  .inner > :nth-child(5) { animation-delay: .32s; }
+  .inner > :nth-child(6) { animation-delay: .4s; }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 </style>
