@@ -6,8 +6,8 @@ const { linkedinUrl } = useRuntimeConfig().public
   <section id="apropos" class="section about-wrap">
     <div class="wrap about">
       <!-- Remplacer par <img src="/photo.jpg" alt="…"> une fois la photo ajoutée dans public/ -->
-      <div class="photo">[VOTRE PHOTO]</div>
-      <div class="text">
+      <div class="photo reveal">[VOTRE PHOTO]</div>
+      <div class="text reveal">
         <span class="eyebrow">À propos</span>
         <h2>Relier les gens et l'IA, c'est notre métier.</h2>
         <p class="muted">
